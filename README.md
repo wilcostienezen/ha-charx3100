@@ -53,7 +53,7 @@ from register 114.
 ## Installation
 
 ### HACS / Marketplace (custom repository)
-1. Add `https://github.com/GITHUB_USERNAME/ha-charx3100` as a custom repository (category *Integration*).
+1. Add `https://github.com/wilcostienezen/ha-charx3100` as a custom repository (category *Integration*).
 2. Download **CHARX 3100** and restart Home Assistant.
 3. *Settings → Devices & services → Add integration → CHARX 3100*, enter the IP address.
 
