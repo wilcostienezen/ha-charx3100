@@ -1,0 +1,131 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "CHARX 3100",
+        "description": "Connect to a CHARX SEC-3100 via Modbus/TCP. Enable the Modbus server on the controller first (System Control → Status).",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "unit_id": "Unit ID"
+        },
+        "data_description": {
+          "host": "IP address or hostname of the controller.",
+          "unit_id": "Modbus unit ID, normally 1."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect, or no charging points found. Check the IP address and that the Modbus server is enabled."
+    },
+    "abort": {
+      "already_configured": "This controller is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "CHARX 3100 options",
+        "data": {
+          "scan_interval": "Poll interval",
+          "max_current_limit": "Maximum current that can be set",
+          "restore_on_reset": "Restore settings after a controller reset"
+        },
+        "data_description": {
+          "max_current_limit": "Upper limit of the max current control; match your installation (cable, fuse).",
+          "restore_on_reset": "Writes the last charging release and max current from Home Assistant back when the controller reports other values, e.g. after a reset. Only writes when different."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "charging_state": {
+        "name": "Charging state",
+        "state": {
+          "not_connected": "Not connected",
+          "connected": "Connected",
+          "charging": "Charging",
+          "charging_ventilation": "Charging (ventilation)",
+          "error": "Error",
+          "not_available": "Not available"
+        }
+      },
+      "iec_status": {
+        "name": "IEC 61851 status"
+      },
+      "power": {
+        "name": "Power"
+      },
+      "reactive_power": {
+        "name": "Reactive power"
+      },
+      "apparent_power": {
+        "name": "Apparent power"
+      },
+      "energy_total": {
+        "name": "Energy total"
+      },
+      "energy_session": {
+        "name": "Energy session"
+      },
+      "current_l1": {
+        "name": "Current L1"
+      },
+      "current_l2": {
+        "name": "Current L2"
+      },
+      "current_l3": {
+        "name": "Current L3"
+      },
+      "voltage_l1": {
+        "name": "Voltage L1"
+      },
+      "voltage_l2": {
+        "name": "Voltage L2"
+      },
+      "voltage_l3": {
+        "name": "Voltage L3"
+      },
+      "charging_time": {
+        "name": "Charging time"
+      },
+      "connection_time": {
+        "name": "Connection time"
+      },
+      "pwm_current": {
+        "name": "Offered current (PWM)"
+      },
+      "pwm_duty_cycle": {
+        "name": "PWM duty cycle"
+      },
+      "cable_capacity": {
+        "name": "Cable capacity"
+      },
+      "error_code": {
+        "name": "Error code"
+      }
+    },
+    "binary_sensor": {
+      "vehicle_connected": {
+        "name": "Vehicle connected"
+      },
+      "charging": {
+        "name": "Charging"
+      },
+      "error": {
+        "name": "Error"
+      }
+    },
+    "switch": {
+      "charging_release": {
+        "name": "Charging release"
+      }
+    },
+    "number": {
+      "max_current": {
+        "name": "Max charging current"
+      }
+    }
+  }
+}

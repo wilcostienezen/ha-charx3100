@@ -1,0 +1,131 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "CHARX 3100",
+        "description": "Verbind met een CHARX SEC-3100 via Modbus/TCP. Zet eerst de Modbus-server aan op de controller (System Control → Status).",
+        "data": {
+          "host": "Host (IP-adres)",
+          "port": "Poort",
+          "unit_id": "Unit ID"
+        },
+        "data_description": {
+          "host": "IP-adres of hostnaam van de controller.",
+          "unit_id": "Modbus unit-ID, normaal 1."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Geen verbinding, of geen laadpunten gevonden. Controleer het IP-adres en of de Modbus-server aan staat."
+    },
+    "abort": {
+      "already_configured": "Deze controller is al ingesteld."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "CHARX 3100-opties",
+        "data": {
+          "scan_interval": "Pollinterval",
+          "max_current_limit": "Maximaal instelbare stroom",
+          "restore_on_reset": "Instellingen herstellen na reset van de controller"
+        },
+        "data_description": {
+          "max_current_limit": "Bovengrens van de laadstroom-instelling; stem af op je installatie (kabel, zekering).",
+          "restore_on_reset": "Schrijft de laatste laadvrijgave en max. stroom uit Home Assistant terug als de controller andere waarden meldt, bijvoorbeeld na een reset. Schrijft alleen bij een verschil."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "charging_state": {
+        "name": "Laadstatus",
+        "state": {
+          "not_connected": "Niet verbonden",
+          "connected": "Verbonden",
+          "charging": "Laden",
+          "charging_ventilation": "Laden (ventilatie)",
+          "error": "Fout",
+          "not_available": "Niet beschikbaar"
+        }
+      },
+      "iec_status": {
+        "name": "IEC 61851-status"
+      },
+      "power": {
+        "name": "Vermogen"
+      },
+      "reactive_power": {
+        "name": "Blind vermogen"
+      },
+      "apparent_power": {
+        "name": "Schijnbaar vermogen"
+      },
+      "energy_total": {
+        "name": "Energie totaal"
+      },
+      "energy_session": {
+        "name": "Energie sessie"
+      },
+      "current_l1": {
+        "name": "Stroom L1"
+      },
+      "current_l2": {
+        "name": "Stroom L2"
+      },
+      "current_l3": {
+        "name": "Stroom L3"
+      },
+      "voltage_l1": {
+        "name": "Spanning L1"
+      },
+      "voltage_l2": {
+        "name": "Spanning L2"
+      },
+      "voltage_l3": {
+        "name": "Spanning L3"
+      },
+      "charging_time": {
+        "name": "Laadtijd"
+      },
+      "connection_time": {
+        "name": "Verbonden tijd"
+      },
+      "pwm_current": {
+        "name": "Aangeboden stroom (PWM)"
+      },
+      "pwm_duty_cycle": {
+        "name": "PWM duty cycle"
+      },
+      "cable_capacity": {
+        "name": "Kabelcapaciteit"
+      },
+      "error_code": {
+        "name": "Foutcode"
+      }
+    },
+    "binary_sensor": {
+      "vehicle_connected": {
+        "name": "Voertuig verbonden"
+      },
+      "charging": {
+        "name": "Laden"
+      },
+      "error": {
+        "name": "Fout"
+      }
+    },
+    "switch": {
+      "charging_release": {
+        "name": "Laden toegestaan"
+      }
+    },
+    "number": {
+      "max_current": {
+        "name": "Max. laadstroom"
+      }
+    }
+  }
+}
