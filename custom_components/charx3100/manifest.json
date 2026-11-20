@@ -1,12 +1,12 @@
 {
   "domain": "charx3100",
   "name": "CHARX 3100",
-  "codeowners": ["@GITHUB_USERNAME"],
+  "codeowners": ["@wilcostienezen"],
   "config_flow": true,
-  "documentation": "https://github.com/GITHUB_USERNAME/ha-charx3100",
+  "documentation": "https://github.com/wilcostienezen/ha-charx3100",
   "integration_type": "hub",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/GITHUB_USERNAME/ha-charx3100/issues",
+  "issue_tracker": "https://github.com/wilcostienezen/ha-charx3100/issues",
   "loggers": ["custom_components.charx3100", "pymodbus"],
   "requirements": ["pymodbus>=3.6.0"],
   "version": "0.1.0"
